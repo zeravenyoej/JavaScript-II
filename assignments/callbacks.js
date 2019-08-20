@@ -75,7 +75,7 @@ last(lastResults, items);
 //3
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
-  return cb (x+ y);
+  return cb (x + y);
 }
 
 const logResSum= function(res) {
@@ -107,22 +107,18 @@ multiplyNums(2, 10, logResMult);
 
 
 //5
-// function contains(item, list, cb) {
-//   // contains checks if an item is present inside of the given array/list.
-//   // Pass true to the callback if it is, otherwise pass false.
-// //   cb (
-// //     if (list.includes(item)) {
-// //       return true
-// //     };
-// //   );
-// // }
+function contains(item, list, cb) {
+  // contains checks if an item is present inside of the given array/list.
+  // Pass true to the callback if it is, otherwise pass false.
+  cb(list.includes(item))
+}
+// console.log(items.includes('Gum'));
 
+const logResCont = function (res) {
+  console.log(res);
+} 
 
-// // const logResCont = function (res) {
-// //   console.log(res);
-// // } 
-
-// // contains('Gum', items, logResCont);
+contains('Gum', items, logResCont);
 
 
 

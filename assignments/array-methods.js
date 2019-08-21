@@ -76,7 +76,6 @@ let firstNamesAllCaps = runners.map(function (runner){
   return runner.first_name.toUpperCase();
 }
 )
-
 console.log(firstNamesAllCaps);
 
 
@@ -93,8 +92,9 @@ console.log(JSON.stringify(runnersLargeSizeShirt));
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations and save the total into a ticketPriceTotal variable.
-let ticketPriceTotal = 0;
-
+let ticketPriceTotal = runners.reduce(function(accumulator, runner) {
+  return accumulator + runner.donation;
+}, 0);
 
 
 console.log(ticketPriceTotal);
@@ -104,6 +104,23 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 
+//I only want email addresses
+
+const emailAddresses =[]
+runners.forEach(runner=>emailAddresses.push(`${runner.email}`));
+console.log(JSON.stringify(emailAddresses));
+
+
 // Problem 2
 
+//I want to put all shirt sizes in lowercase
+
+const lowercaseShirts = runners.map(runner=>runner.shirt_size.toLowerCase());
+console.log(lowercaseShirts);
+
 // Problem 3
+
+//I only want runners who donated less than $10
+
+const lowDonor = runners.filter(runner=>runner.donation <= 10);
+console.log(lowDonor);

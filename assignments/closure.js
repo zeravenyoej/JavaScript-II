@@ -4,11 +4,11 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+
 const candy = 'dots';
 function returnCandy () {
   return candy;
 }
-
 returnCandy();
 
 

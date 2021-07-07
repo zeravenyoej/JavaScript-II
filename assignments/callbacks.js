@@ -1,6 +1,6 @@
 // Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+// const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 /* 
 
@@ -38,27 +38,69 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   console.log(test2); // "this Pencil is worth a million dollars!"
 */
 
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+
+//1 getLength passes the length of the array into the callback.
+
 
 function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
+  cb (arr.length);
 }
+const logResLength = res => console.log(res);
+getLength(items, logResLength);
 
-function last(arr, cb) {
-  // last passes the last item of the array into the callback.
+
+
+//2  last passes the last item of the array into the callback.
+
+
+function last(callback, array) {
+  return callback(array[array.length-1]);
 }
+const logResLast = items => console.log(items);
+last(logResLast, items);
+
+
+
+//3 sumNums adds two numbers (x, y) and passes the result to the callback.
+
 
 function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb (x + y);
 }
+
+const logResSum = res => console.log(res);
+sumNums(2, 4, logResSum);
+
+
+
+
+//4 multiplyNums multiplies two numbers and passes the result to the callback.
+
 
 function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb (x * y);
+}
+const logResMult = res => console.log (res);
+multiplyNums(2, 10, logResMult);
+
+
+
+//5   // contains checks if an item is present inside of the given array/list.
+  // Pass true to the callback if it is, otherwise pass false.
+
+
+function contains (item, list, cb) {
+  cb(list.includes(item))
 }
 
-function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
-}
+const logResCont = res => console.log(res);
+contains('Gum', items, logResCont);
+
+
+
+
+
 
 /* STRETCH PROBLEM */
 

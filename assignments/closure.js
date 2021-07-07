@@ -5,6 +5,15 @@
 // The outer scope can be a parent function, or the top level of the script.
 
 
+const candy = 'dots';
+function returnCandy () {
+  return candy;
+}
+returnCandy();
+
+
+
+
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
